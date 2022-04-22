@@ -27,20 +27,16 @@
             </div>
 
             <section class="tasks_section">
+
                 <ul class="tasks_list">
-                    <li>
-                        <span>Fare i compiti</span>
-                        <i class="fa-solid fa-xmark"></i>
-                    </li>
-                    <li>
-                        <span>Fare i compiti</span>
-                        <i class="fa-solid fa-xmark"></i>
-                    </li>
-                    <li>
-                        <span>Fare i compiti</span>
+                    <!-- MILESTONE 1: Stampare all'interno di una lista, un item per ogni todo.
+                    Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato. -->
+                    <li v-for="task in tasks">
+                        <span :class="task.done === true ? 'done' : '' ">{{task.text}}</span>
                         <i class="fa-solid fa-xmark"></i>
                     </li>
                 </ul>
+
             </section>
 
         </div>
