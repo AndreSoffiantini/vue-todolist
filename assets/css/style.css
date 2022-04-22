@@ -32,6 +32,10 @@
     padding: 0.75rem;
 }
 
+.fa-xmark {
+    cursor: pointer;
+}
+
 .done {
     text-decoration: line-through;
 }

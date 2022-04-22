@@ -28,14 +28,20 @@
 
             <section class="tasks_section">
 
-                <ul class="tasks_list">
+                <ul class="tasks_list" v-if="tasks.length > 0">
                     <!-- MILESTONE 1: Stampare all'interno di una lista, un item per ogni todo.
                     Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato. -->
-                    <li v-for="task in tasks">
+                    <li v-for="(task, index) in tasks">
                         <span :class="task.done === true ? 'done' : '' ">{{task.text}}</span>
-                        <i class="fa-solid fa-xmark"></i>
+                        <!-- MILESTONE 2
+                        Visualizzare a fianco ad ogni item una "x": cliccando su di essa, il todo viene rimosso dalla lista.-->
+                        <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>
                     </li>
                 </ul>
+
+                <p v-else style="text-align: center; padding-top: 1rem;">
+                    All tasks are done!! 🥳🥳🥳
+                </p>
 
             </section>
 
