@@ -26,6 +26,7 @@
             il testo digitato viene letto e utilizzato per creare un nuovo todo, 
             che quindi viene aggiunto alla lista dei todo esistenti. -->
             <div class="add_task">
+                <!-- Bonus 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista -->
                 <input type="text" placeholder="Nuovo Todo" v-model="newTaskText" @keyup.enter="addTask">
                 <button @click="addTask">Aggiungi</button>
             </div>
@@ -36,7 +37,9 @@
                     <!-- MILESTONE 1: Stampare all'interno di una lista, un item per ogni todo.
                     Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato. -->
                     <li v-for="(task, index) in tasks">
-                        <span :class="task.done === true ? 'done' : '' ">{{task.text}}</span>
+                        <!-- Bonus 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo 
+                        corrispondente (se done era uguale a false, impostare true e viceversa) -->
+                        <span :class="task.done === true ? 'done' : '' " @click="doUndoTask(index)">{{task.text}}</span>
                         <!-- MILESTONE 2
                         Visualizzare a fianco ad ogni item una "x": cliccando su di essa, il todo viene rimosso dalla lista.-->
                         <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>

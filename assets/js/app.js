@@ -30,6 +30,10 @@ const app = new Vue({
                 this.tasks.push(newTask);
             }
 
+        },
+
+        doUndoTask(index) {
+            this.tasks[index].done = !this.tasks[index].done;
         }
     }
 })
