@@ -3,6 +3,8 @@ const app = new Vue({
 
     data: {
 
+        newTaskText: null,
+
         tasks: [
             { text: 'Fare i compiti', done: false },
             { text: 'Fare la spesa', done: true },
@@ -14,7 +16,20 @@ const app = new Vue({
 
         removeTask(index) {
             this.tasks.splice(index, 1);
-        }
+        },
 
+        addTask() {
+
+            if (this.newTaskText) {
+
+                const newTask = {
+                    text: this.newTaskText,
+                    done: 'false'
+                }
+
+                this.tasks.push(newTask);
+            }
+
+        }
     }
 })

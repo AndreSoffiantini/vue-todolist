@@ -21,9 +21,13 @@
                 <img src="https://bebeez.it/wp-content/uploads/2021/07/boolean-e1626086189994.png" alt="">
             </header>
 
+            <!--  MILESTONE 3
+            Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, 
+            il testo digitato viene letto e utilizzato per creare un nuovo todo, 
+            che quindi viene aggiunto alla lista dei todo esistenti. -->
             <div class="add_task">
-                <input type="text" name="" id="" placeholder="Nuovo Todo">
-                <button>Aggiungi</button>
+                <input type="text" placeholder="Nuovo Todo" v-model="newTaskText" @keyup.enter="addTask">
+                <button @click="addTask">Aggiungi</button>
             </div>
 
             <section class="tasks_section">
