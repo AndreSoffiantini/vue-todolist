@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+.tasks_section {
+    margin-top: 3rem;
+    background-color: whitesmoke;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.tasks_list {
+    list-style: none;
+}
+
+.tasks_list>li {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
